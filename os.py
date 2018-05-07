@@ -82,8 +82,20 @@ t2 = Test(123334)
 name = ["alex", "rain", "test"]
 d["test"] = name  # 持久化列表
 d["t1"] = t  # 持久化类
-d["t2"] = t2
+d["t2"] = t2  #可以通过 t1 t2 获取  a.get("t1")
 d.close()
+
+# xml 处理模块
+import xml.etree.cElementTree as ET
+tree = ET.parse("xmltest.xml")
+root = tree.getroot() # 根结点
+print(root.tag)
+
+# 遍历 xml 文档
+for child in root:
+    print(child.tag,child.attrib)
+    for i in child:
+        print(i.tag,i.text)
 
 # print(time.clock()) #返回处理器时间,3.3开始已废弃 , 改成了time.process_time()测量处理器运算时间,不包括sleep时间,不稳定,mac上测不出来
 # print(time.altzone)  #返回与utc时间的时间差,以秒计算\
