@@ -30,3 +30,12 @@ print(len(m.hexdigest()))  # 16进制格式hash
 import hmac
 h = hmac.new(b'天王盖地虎', b'宝塔镇河妖')
 print(h.hexdigest())
+
+#
+import logging
+
+logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+logging.warning('is when this event was logged.')
+
+# 输出
+# 12 / 12 / 2010 11: 46:36 AM is when this  event was logged.
